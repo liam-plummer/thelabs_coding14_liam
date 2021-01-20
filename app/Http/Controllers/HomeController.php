@@ -10,6 +10,7 @@ use App\Models\Contact;
 use App\Models\Home;
 use App\Models\HomeVideo;
 use App\Models\Intro;
+use App\Models\MapAdress;
 use App\Models\Navbar;
 use App\Models\Promotion;
 use App\Models\Service;
@@ -39,7 +40,8 @@ class HomeController extends Controller
         $navbars = Navbar::all();
         $boutons = Bouton::all();
         $banners = Carousel::all();
-        return view('pages.home', compact('testimonials', 'intros', 'promotions', 'teams', 'services', 'abouts', 'videos', 'aboutServices','contacts','navbars', 'boutons', 'banners'));
+        $adress = MapAdress::all();
+        return view('pages.home', compact('testimonials', 'intros', 'promotions', 'teams', 'services', 'abouts', 'videos', 'aboutServices','contacts','navbars', 'boutons', 'banners', 'adress'));
     }
 
     /**

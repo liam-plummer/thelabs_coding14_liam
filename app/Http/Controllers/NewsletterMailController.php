@@ -16,7 +16,8 @@ class NewsletterMailController extends Controller
      */
     public function index()
     {
-        //
+        $newsletterMails = NewsletterMail::all();
+        return view('components.admin.newsletterSubscribers', compact('newsletterMails'));
     }
 
     /**

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ContactForm;
+use App\Models\MapAdress;
 use Illuminate\Http\Request;
 
-class ContactFormController extends Controller
+class MapAdressController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class ContactFormController extends Controller
      */
     public function index()
     {
-        $contactforms = ContactForm::all();
-        return view('components.admin.contactRequests', compact('contactforms'));
+        //
     }
 
     /**
@@ -25,7 +24,7 @@ class ContactFormController extends Controller
      */
     public function create()
     {
-        // 
+        //
     }
 
     /**
@@ -36,28 +35,16 @@ class ContactFormController extends Controller
      */
     public function store(Request $request)
     {
-        $contact = new ContactForm();
-        $request->validate([
-            "name" => "required",
-            "email" => "required",
-            "subject" => "required",
-            "message" => "required"
-        ]);
-        $contact->name=$request->name;
-        $contact->email=$request->email;
-        $contact->subject=$request->subject;
-        $contact->message=$request->message;
-        $contact->save();
-        return redirect()->back();
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ContactForm  $contactForm
+     * @param  \App\Models\MapAdress  $mapAdress
      * @return \Illuminate\Http\Response
      */
-    public function show(ContactForm $contactForm)
+    public function show(MapAdress $mapAdress)
     {
         //
     }
@@ -65,10 +52,10 @@ class ContactFormController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ContactForm  $contactForm
+     * @param  \App\Models\MapAdress  $mapAdress
      * @return \Illuminate\Http\Response
      */
-    public function edit(ContactForm $contactForm)
+    public function edit(MapAdress $mapAdress)
     {
         //
     }
@@ -77,10 +64,10 @@ class ContactFormController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ContactForm  $contactForm
+     * @param  \App\Models\MapAdress  $mapAdress
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ContactForm $contactForm)
+    public function update(Request $request, MapAdress $mapAdress)
     {
         //
     }
@@ -88,10 +75,10 @@ class ContactFormController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ContactForm  $contactForm
+     * @param  \App\Models\MapAdress  $mapAdress
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ContactForm $contactForm)
+    public function destroy(MapAdress $mapAdress)
     {
         //
     }

@@ -29,30 +29,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="d-flex flex-column ml-2 p-2">
+                    <h6>Members List</h6>
+                    <a href="{{route('userlist.index')}}" class="btn-success p-2 w-25">View Users</a>
+                </div>
+                <div class="d-flex flex-column ml-2 p-2">
+                    <h6>Newsletter Subscribers</h6>
+                    <a href="{{route('newsletters.index')}}" class="btn-primary p-2 w-25">View Subscribers</a>
+                </div>
+                <div class="d-flex flex-column ml-2 p-2">
+                    <h6>Contact Requests</h6>
+                    <a href="{{route('contactform.index')}}" class="btn-primary p-2 w-25">View Contact Requests</a>
+                </div>
             </div>
-        </div>
-    </div>
-    <div>
-        <table class="table">
-            <thead class="thead-dark">
-            <tr>
-                <th scope="col">First</th>
-                <th scope="col">Email</th>
-                <th scope="col">Role</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($users as $e)
-            <tr>
-                <th scope="row">{{$e->name}}</th>
-                <td>{{$e->email}}</td>
-                <td>{{$e->roles->name}}</td>
-            </tr>
-            @endforeach
-            </tbody>
-        </table>
-        <div class="d-flex justify-content-center">
-            {{$users->links()}}
         </div>
     </div>
 @stop
