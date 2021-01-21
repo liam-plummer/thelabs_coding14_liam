@@ -13,6 +13,7 @@ use App\Models\Intro;
 use App\Models\MapAdress;
 use App\Models\Navbar;
 use App\Models\Promotion;
+use App\Models\SectionTitle;
 use App\Models\Service;
 use App\Models\Team;
 use App\Models\Testimonial;
@@ -41,7 +42,8 @@ class HomeController extends Controller
         $boutons = Bouton::all();
         $banners = Carousel::all();
         $adress = MapAdress::all();
-        return view('pages.home', compact('testimonials', 'intros', 'promotions', 'teams', 'services', 'abouts', 'videos', 'aboutServices','contacts','navbars', 'boutons', 'banners', 'adress'));
+        $titles = SectionTitle::all();
+        return view('pages.home', compact('testimonials', 'intros', 'promotions', 'teams', 'services', 'abouts', 'videos', 'aboutServices','contacts','navbars', 'boutons', 'banners', 'adress', 'titles'));
     }
 
     /**

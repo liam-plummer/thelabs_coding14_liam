@@ -9,9 +9,11 @@ use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\ContactPageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeVideoController;
+use App\Http\Controllers\MapAdressController;
 use App\Http\Controllers\NavbarController;
 use App\Http\Controllers\NewsletterMailController;
 use App\Http\Controllers\PromotionController;
+use App\Http\Controllers\SectionTitleController;
 use App\Http\Controllers\ServiceCardController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServicesPageController;
@@ -26,6 +28,7 @@ use App\Models\ContactForm;
 use App\Models\HomeVideo;
 use App\Models\Icon;
 use App\Models\Intro;
+use App\Models\MapAdress;
 use App\Models\Navbar;
 use App\Models\NewsletterMail;
 use App\Models\Promotion;
@@ -63,6 +66,8 @@ Route::resource('carousel', CarouselController::class);
 Route::resource('newsletters', NewsletterMailController::class);
 Route::resource('contactform', ContactFormController::class);
 Route::resource('userlist', UserController::class);
+Route::resource('title', SectionTitleController::class);
+Route::resource('map', MapAdressController::class);
 Route::get('/dashboard', function () {
     return view('welcome');
 });
@@ -89,7 +94,8 @@ Route::get('/admin', function() {
     $users = User::simplePaginate(5);
     $contactform = ContactForm::all();
     $newsletterMails = NewsletterMail::all();
-    return view('home', compact('testimonials', 'intros', 'promotions', 'teams', 'services', 'abouts', 'videos','contacts','navbars', 'icons', 'boutons', 'banners', 'users', 'contactform', 'newsletterMails'));
+    $adresses = MapAdress::all();
+    return view('home', compact('testimonials', 'intros', 'promotions', 'teams', 'services', 'abouts', 'videos','contacts','navbars', 'icons', 'boutons', 'banners', 'users', 'contactform', 'newsletterMails', 'adresses'));
 })->name('admin')->middleware('auth');
 
 Route::get('/', [HomeController::class, 'index'])->name("home");

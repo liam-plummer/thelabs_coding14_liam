@@ -26,6 +26,8 @@
                           <a class="dropdown-item" href="{{route('bouton.index')}}">Bouton</a>
                           <a class="dropdown-item" href="{{route('testimonial.index')}}">Testimonials</a>
                           <a class="dropdown-item" href="{{route('carousel.index')}}">Image Carousel</a>
+                          <a class="dropdown-item" href="{{route('title.index')}}">Titres Section</a>
+                          <a class="dropdown-item" href="{{route('map.index')}}">Google Maps</a>
                         </div>
                     </div>
                 </div>

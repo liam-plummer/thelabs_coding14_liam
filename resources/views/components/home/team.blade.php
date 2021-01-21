@@ -2,9 +2,11 @@
 <div class="team-section spad">
 		<div class="overlay"></div>
 		<div class="container">
+		@foreach($titles as $e)
 			<div class="section-title">
-				<h2>Get in <span>the Lab</span> and  meet the team</h2>
+				<h2>{{$e->title2}}</h2>
 			</div>
+		@endforeach
 			<div class="row">
 				@foreach($teams as $e)
 				<!-- single member -->

@@ -21,7 +21,7 @@ class HomeShortCodeTwoMiddleware
             return $response;
         endif;
 
-        $content = str_replace('~~', '</span>', $response->content());
+        $content = str_replace(' ~~ ', ' </span> ', $response->content());
 
         $response->setContent($content);
         return $response;

@@ -21,7 +21,7 @@ class HomeShortCodeMiddleware
             return $response;
         endif;
 
-        $content = str_replace('~', '<span class="bg-success">', $response->content());
+        $content = str_replace(' ~ ' , ' <span class="bg-success"> ', $response->content());
 
         $response->setContent($content);
         return $response;

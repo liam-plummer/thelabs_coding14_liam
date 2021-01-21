@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MapAdress;
+use App\Models\SectionTitle;
 use Illuminate\Http\Request;
 
-class MapAdressController extends Controller
+class SectionTitleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class MapAdressController extends Controller
      */
     public function index()
     {
-        $adresses = MapAdress::all();
-        return view('components.admin.map', compact('adresses'));
+        $titles = SectionTitle::all();
+        return view('components.admin.sectionTitles', compact('titles'));
     }
 
     /**
@@ -42,10 +42,10 @@ class MapAdressController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\MapAdress  $mapAdress
+     * @param  \App\Models\SectionTitle  $sectionTitle
      * @return \Illuminate\Http\Response
      */
-    public function show(MapAdress $mapAdress)
+    public function show(SectionTitle $sectionTitle)
     {
         //
     }
@@ -53,39 +53,41 @@ class MapAdressController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\MapAdress  $mapAdress
+     * @param  \App\Models\SectionTitle  $sectionTitle
      * @return \Illuminate\Http\Response
      */
-    public function edit(MapAdress $mapAdress)
+    public function edit(SectionTitle $sectionTitle)
     {
-        return view('components.edit.editMap', compact('mapAdress'));
+        return view('components.edit.editTitles', compact('sectionTitle'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\MapAdress  $mapAdress
+     * @param  \App\Models\SectionTitle  $sectionTitle
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MapAdress $mapAdress)
+    public function update(Request $request, SectionTitle $sectionTitle)
     {
         $request->validate([
-            'adress' => "required"
+            'title1' => 'required',
+            'title2' => 'required'
         ]);
-        $mapAdress->adress=$request->adress;
+        $sectionTitle->title1=$request->title1;
+        $sectionTitle->title2=$request->title2;
 
-        $mapAdress->save();
-        return redirect()->route('map.index');
+        $sectionTitle->save();
+        return redirect('title.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\MapAdress  $mapAdress
+     * @param  \App\Models\SectionTitle  $sectionTitle
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MapAdress $mapAdress)
+    public function destroy(SectionTitle $sectionTitle)
     {
         //
     }

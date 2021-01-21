@@ -39,5 +39,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CarouselSeeder::class);
         $this->call(ContactFormSeeder::class);
         $this->call(MapAdressSeeder::class);
+        $this->call(SectionTitleSeeder::class);
     }
 }
