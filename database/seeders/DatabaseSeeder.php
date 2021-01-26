@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\BlogPost;
 use App\Models\PrimeService;
 use App\Models\ServiceCards;
 use Illuminate\Database\Seeder;
@@ -40,5 +41,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ContactFormSeeder::class);
         $this->call(MapAdressSeeder::class);
         $this->call(SectionTitleSeeder::class);
+        $this->call(BlogPostsSeeder::class);
+        $this->call(FooterSeeder::class);
     }
 }

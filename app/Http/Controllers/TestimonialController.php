@@ -76,7 +76,6 @@ class TestimonialController extends Controller
             'job'=>'required',
             'testimonial' => 'required'
         ]);
-        $testimonial->image = $request->image;
         $testimonial->image = $request->file("image")->hashName();
         $request->file("image")->storePublicly("img", "public");
         $testimonial->name = $request->name;

@@ -2,7 +2,7 @@
 	@foreach($navbars as $e)
 	<header class="header-section">
 		<div class="logo">
-			<img src="{{asset('img/'.$e->image)}}" alt="" width="111px" height="32"><!-- Logo -->
+			<img src="{{asset('img/'.$e->image)}}" alt="" width="111px" height="32px"><!-- Logo -->
 		</div>
 		<!-- Navigation -->
 		<div class="responsive"><i class="fa fa-bars"></i></div>

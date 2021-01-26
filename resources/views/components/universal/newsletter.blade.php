@@ -7,7 +7,7 @@
 				</div>
 				<div class="col-md-9">
 					<!-- newsletter form -->
-					<form class="nl-form" action="{{route('newsletter.store')}}" method="POST">
+					<form class="nl-form" action="{{route('newsletters.store')}}" method="POST">
 						@csrf
 						<input type="text" placeholder="Your e-mail here" name="email">
 						<!-- @foreach($boutons as $btn) -->

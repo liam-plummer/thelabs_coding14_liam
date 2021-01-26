@@ -1,6 +1,5 @@
 @extends('adminlte::page')
 
-
 @section('content')
 <div class="container">
     <form action="/carousel/{{ $carousel->id }}" method="POST" enctype="multipart/form-data">

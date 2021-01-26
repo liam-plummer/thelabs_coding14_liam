@@ -7,6 +7,7 @@ use App\Models\Bouton;
 use App\Models\Button;
 use App\Models\Carousel;
 use App\Models\Contact;
+use App\Models\Footer;
 use App\Models\Home;
 use App\Models\HomeVideo;
 use App\Models\Intro;
@@ -43,7 +44,8 @@ class HomeController extends Controller
         $banners = Carousel::all();
         $adress = MapAdress::all();
         $titles = SectionTitle::all();
-        return view('pages.home', compact('testimonials', 'intros', 'promotions', 'teams', 'services', 'abouts', 'videos', 'aboutServices','contacts','navbars', 'boutons', 'banners', 'adress', 'titles'));
+        $footers = Footer::all();
+        return view('pages.home', compact('testimonials', 'intros', 'promotions', 'teams', 'services', 'abouts', 'videos', 'aboutServices','contacts','navbars', 'boutons', 'banners', 'adress', 'titles', 'footers'));
     }
 
     /**

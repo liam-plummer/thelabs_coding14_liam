@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bouton;
 use App\Models\Contact;
+use App\Models\Footer;
 use App\Models\MapAdress;
 use App\Models\Navbar;
 use Illuminate\Http\Request;
@@ -16,6 +17,7 @@ class ContactPageController extends Controller
         $navbars = Navbar::all();
         $boutons = Bouton::all();
         $adress = MapAdress::all();
-        return view('pages.contact', compact('contacts','navbars', 'boutons', 'adress'));
+        $footers = Footer::all();
+        return view('pages.contact', compact('contacts','navbars', 'boutons', 'adress', 'footers'));
     }
 }
