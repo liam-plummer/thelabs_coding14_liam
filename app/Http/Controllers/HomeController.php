@@ -14,10 +14,12 @@ use App\Models\Intro;
 use App\Models\MapAdress;
 use App\Models\Navbar;
 use App\Models\Promotion;
+use App\Models\Role;
 use App\Models\SectionTitle;
 use App\Models\Service;
 use App\Models\Team;
 use App\Models\Testimonial;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -45,7 +47,9 @@ class HomeController extends Controller
         $adress = MapAdress::all();
         $titles = SectionTitle::all();
         $footers = Footer::all();
-        return view('pages.home', compact('testimonials', 'intros', 'promotions', 'teams', 'services', 'abouts', 'videos', 'aboutServices','contacts','navbars', 'boutons', 'banners', 'adress', 'titles', 'footers'));
+        $users = User::all();
+        $roles = Role::all();
+        return view('pages.home', compact('testimonials', 'intros', 'promotions', 'teams', 'services', 'abouts', 'videos', 'aboutServices','contacts','navbars', 'boutons', 'banners', 'adress', 'titles', 'footers','users','roles'));
     }
 
     /**

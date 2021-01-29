@@ -13,7 +13,22 @@
 				<li><a href="{{route('service')}}">{{$e->item2}}</a></li>
 				<li><a href="{{route('blog')}}">{{$e->item3}}</a></li>
 				<li><a href="{{route('contactpage')}}">{{$e->item4}}</a></li>
-				<li><a href="{{route('admin')}}">Admin</a></li>
+				@if(Auth::user())
+							<ul class="menu-list">
+        					    <li>
+        					        <form method="POST" action="{{ route('logout') }}"> 
+        					            @csrf
+        					            <x-jet-responsive-nav-link href="{{ route('logout') }}" class=""
+        					                            onclick="event.preventDefault();
+        					                                        this.closest('form').submit();">
+        					                {{ __('Logout') }}
+        					            </x-jet-responsive-nav-link>
+        					        </form>
+        					    </li>
+				@else
+					<li><a href="{{ route('login') }}">Login</a></li>
+					<li><a href="{{ route('register') }}">Register</a></li>
+				@endif
 			</ul>
 		</nav>
 	</header>

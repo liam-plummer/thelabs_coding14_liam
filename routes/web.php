@@ -17,6 +17,7 @@ use App\Http\Controllers\SectionTitleController;
 use App\Http\Controllers\ServiceCardController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServicesPageController;
+use App\Http\Controllers\SinglePostController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\UserController;
@@ -33,6 +34,7 @@ use App\Models\Navbar;
 use App\Models\NewsletterMail;
 use App\Models\Promotion;
 use App\Models\Service;
+use App\Models\SinglePost;
 use App\Models\Team;
 use App\Models\Testimonial;
 use App\Models\User;
@@ -100,5 +102,6 @@ Route::get('/admin', function() {
 
 Route::get('/', [HomeController::class, 'index'])->name("home");
 Route::get('/blog', [BlogPageController::class, 'index'])->name('blog');
+Route::get('/blogPost', [SinglePostController::class, 'index'])->name('blogpost');
 Route::get('/service', [ServicesPageController::class, 'index'])->name("service");
 Route::get('/contact',  [ContactPageController::class, 'index'])->name("contactpage");
