@@ -35,7 +35,7 @@
 						</div>
 						<!-- Post Comments -->
 						<div class="comments">
-							<h2>Comments (2)</h2>
+							<h2>{{count($comments) }} Comments</h2>
 							<ul class="comment-list">
 							@foreach($comments as $comment)
 								<li>
@@ -43,7 +43,7 @@
 										<img src="{{asset('img/avatar/'.$comment->image)}}" alt="">
 									</div>
 									<div class="commetn-text">
-										<h3>{{$comment->name}} | 03 nov, 2017 | {{$comment->subject}}</h3>
+										<h3>{{$comment->name}} | {{ $comment->created_at->format('d M Y')  }}  | {{$comment->subject}}</h3>
 										<p>{{$comment->comment}}</p>
 									</div>
 								</li>
@@ -51,7 +51,7 @@
 							</ul>
 						</div>
 						<!-- Commert Form -->
-
+						@include('components.blog.commentForm')
 					</div>
 				</div>
                 @include('components.blog.rightSidebar')

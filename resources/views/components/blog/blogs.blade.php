@@ -28,10 +28,10 @@
     									@endif
 									@endforeach
 								</a>
-								<a href="">2 Comments</a>
+								<a href="">{{count($comments) }} Comments</a>
 							</div>
 							<p>{{$e->post}}</p>
-							<a href="blog-post.html" class="read-more">Read More</a>
+							<a href="{{route('blogpost')}}" class="read-more">Read More</a>
 						</div>
 					</div>
 					@endforeach

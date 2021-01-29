@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\BlogCommentController;
 use App\Http\Controllers\BlogPageController;
 use App\Http\Controllers\BoutonController;
 use App\Http\Controllers\CarouselController;
@@ -69,6 +70,7 @@ Route::resource('contactform', ContactFormController::class);
 Route::resource('userlist', UserController::class);
 Route::resource('title', SectionTitleController::class);
 Route::resource('map', MapAdressController::class);
+Route::resource('comment', BlogCommentController::class);
 Route::get('/dashboard', function () {
     return view('welcome');
 });

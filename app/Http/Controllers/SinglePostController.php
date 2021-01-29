@@ -27,7 +27,7 @@ class SinglePostController extends Controller
         $instas = BlogInsta::all();
         $footers = Footer::all();
         $blogposts = BlogPost::all();
-        $comments = BlogComment::all()
+        $comments = BlogComment::all();
         return view('pages.blogPost', compact('navbars','tags', 'categories', 'instas','footers', 'blogposts', 'comments'));
     }
 

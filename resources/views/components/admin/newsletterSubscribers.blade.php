@@ -8,7 +8,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Email</th>
-      <th scope="col">Action</th>
+      <th scope="col">Member</th>
     </tr>
   </thead>
   <tbody>
@@ -16,13 +16,14 @@
         <tr>
             <th scope="row">{{$e->id}}</th>
             <td>{{$e->email}}</td>
-            <td>                
-                <form action="/newsletters/{{ $e->id }}" method="post">
-                    @csrf
-                    @method("delete")
-                    <button class="btn btn-danger ml-2" type="submit">Remove</button>
-                </form>
-            </td>
+            <td>No</td>
+        </tr>
+    @endforeach
+    @foreach($users as $e)
+        <tr>
+            <th scope="row">{{$e->id}}</th>
+            <td>{{$e->email}}</td>
+            <td>Yes</td>
         </tr>
     @endforeach
 

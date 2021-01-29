@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\NewsletterMail as MailNewsLetterMail;
 use App\Models\NewsletterMail;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -17,7 +18,8 @@ class NewsletterMailController extends Controller
     public function index()
     {
         $newsletterMails = NewsletterMail::all();
-        return view('components.admin.newsletterSubscribers', compact('newsletterMails'));
+        $users= User::all();
+        return view('components.admin.newsletterSubscribers', compact('newsletterMails', 'users'));
     }
 
     /**

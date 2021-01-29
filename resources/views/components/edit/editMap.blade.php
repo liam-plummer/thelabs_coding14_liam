@@ -2,8 +2,8 @@
 
 
 @section('content')
-<form action="/map/{{ $mapAdress->id }}" method="POST" enctype="multipart/form-data">
-    <div class="container">
+  <div class="container">
+    <form action="/map/{{ $mapAdress->id }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method("put")
             @if ($errors->any())
@@ -22,7 +22,7 @@
         </div>
         <div class="form-group">
         <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-</form>
+    </form>
+  </div>
 
 @stop

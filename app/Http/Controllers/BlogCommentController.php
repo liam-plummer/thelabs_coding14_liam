@@ -35,7 +35,22 @@ class BlogCommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comment = new BlogComment();
+        $request->validate([
+            "name" => "required",
+            "email" => "required",
+            "comment" => "required"
+        ]);
+        $comment->name=$request->name;
+        $comment->email=$request->email;
+        $comment->comment=$request->comment;
+        $comment->subject= "Reply";
+        $comment->image = "02.jpg";
+        $comment->created_at = now();
+
+        $comment->save();
+        return redirect()->back();
+
     }
 
     /**

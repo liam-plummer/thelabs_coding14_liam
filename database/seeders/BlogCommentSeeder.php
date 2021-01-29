@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-
 class BlogCommentSeeder extends Seeder
 {
     /**
@@ -14,7 +13,7 @@ class BlogCommentSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('blog_comments') -> insert([
+        DB::table('blog_comments')->insert([
             'subject' => "Reply",
             'name' => 'Michael Smith',
             'comment' => "Vivamus in urna eu enim porttitor consequat. Proin vitae pulvinar libero. Proin ut hendrerit metus. Aliquam erat volutpat. Donec fermen tum convallis ante eget tristique.",
@@ -22,7 +21,7 @@ class BlogCommentSeeder extends Seeder
             "image" => "01.jpg",
             'created_at' => now()
         ]);
-        DB::table('blog_comments') -> insert([
+        DB::table('blog_comments')->insert([
             'subject' => "Reply",
             'name' => 'Michael Smith',
             'comment' => "Vivamus in urna eu enim porttitor consequat. Proin vitae pulvinar libero. Proin ut hendrerit metus. Aliquam erat volutpat. Donec fermen tum convallis ante eget tristique.",
