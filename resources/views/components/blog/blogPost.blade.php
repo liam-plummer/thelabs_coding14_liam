@@ -6,7 +6,7 @@
 					<!-- Single Post -->
 					<div class="single-post">
 						<div class="post-thumbnail">
-							<img src="img/blog/blog-1.jpg" alt="">
+							<img src="{{asset('img/blog/blog-1.jpg')}}" alt="">
 							<div class="post-date">
 								<h2>03</h2>
 								<h3>Nov 2017</h3>
@@ -26,7 +26,7 @@
 						<!-- Post Author -->
 						<div class="author">
 							<div class="avatar">
-								<img src="img/avatar/03.jpg" alt="">
+								<img src="{{asset('img/avatar/03.jpg')}}" alt="">
 							</div>
 							<div class="author-info">
 								<h2>Lore Williams, <span>Author</span></h2>
@@ -37,28 +37,21 @@
 						<div class="comments">
 							<h2>Comments (2)</h2>
 							<ul class="comment-list">
+							@foreach($comments as $comment)
 								<li>
 									<div class="avatar">
-										<img src="img/avatar/01.jpg" alt="">
+										<img src="{{asset('img/avatar/'.$comment->image)}}" alt="">
 									</div>
 									<div class="commetn-text">
-										<h3>Michael Smith | 03 nov, 2017 | Reply</h3>
-										<p>Vivamus in urna eu enim porttitor consequat. Proin vitae pulvinar libero. Proin ut hendrerit metus. Aliquam erat volutpat. Donec fermen tum convallis ante eget tristique. </p>
+										<h3>{{$comment->name}} | 03 nov, 2017 | {{$comment->subject}}</h3>
+										<p>{{$comment->comment}}</p>
 									</div>
 								</li>
-								<li>
-									<div class="avatar">
-										<img src="img/avatar/02.jpg" alt="">
-									</div>
-									<div class="commetn-text">
-										<h3>Michael Smith | 03 nov, 2017 | Reply</h3>
-										<p>Vivamus in urna eu enim porttitor consequat. Proin vitae pulvinar libero. Proin ut hendrerit metus. Aliquam erat volutpat. Donec fermen tum convallis ante eget tristique. </p>
-									</div>
-								</li>
+							@endforeach
 							</ul>
 						</div>
 						<!-- Commert Form -->
-                        @include('components.blog.commentForm')
+
 					</div>
 				</div>
                 @include('components.blog.rightSidebar')

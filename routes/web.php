@@ -53,7 +53,6 @@ use Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolve
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::resource('navbar', NavbarController::class);
 Route::resource('about', AboutController::class);
 Route::resource('contacts', ContactController::class);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BlogInsta;
+use App\Models\BlogComment;
 use App\Models\BlogPost;
 use App\Models\Categorie;
 use App\Models\Footer;
@@ -26,7 +27,8 @@ class SinglePostController extends Controller
         $instas = BlogInsta::all();
         $footers = Footer::all();
         $blogposts = BlogPost::all();
-        return view('pages.blog-post', compact('navbars','tags', 'categories', 'instas','footers', 'blogposts'));
+        $comments = BlogComment::all()
+        return view('pages.blogPost', compact('navbars','tags', 'categories', 'instas','footers', 'blogposts', 'comments'));
     }
 
     /**

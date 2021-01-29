@@ -19,7 +19,7 @@ class BlogCommentSeeder extends Seeder
             'name' => 'Michael Smith',
             'comment' => "Vivamus in urna eu enim porttitor consequat. Proin vitae pulvinar libero. Proin ut hendrerit metus. Aliquam erat volutpat. Donec fermen tum convallis ante eget tristique.",
             'email' => "random@mail.com",
-            "image" => 
+            "image" => "01.jpg",
             'created_at' => now()
         ]);
         DB::table('blog_comments') -> insert([
@@ -27,6 +27,7 @@ class BlogCommentSeeder extends Seeder
             'name' => 'Michael Smith',
             'comment' => "Vivamus in urna eu enim porttitor consequat. Proin vitae pulvinar libero. Proin ut hendrerit metus. Aliquam erat volutpat. Donec fermen tum convallis ante eget tristique.",
             'email' => "random@mail.com",
+            "image" => "02.jpg",
             'created_at' => now()
         ]);
     }

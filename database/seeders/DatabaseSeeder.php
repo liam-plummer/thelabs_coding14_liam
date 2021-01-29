@@ -43,5 +43,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SectionTitleSeeder::class);
         $this->call(BlogPostsSeeder::class);
         $this->call(FooterSeeder::class);
+        $this->call(BlogCommentSeeder::class);
     }
 }
