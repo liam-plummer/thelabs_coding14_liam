@@ -16,13 +16,13 @@ class BlogPageController extends Controller
 {
     public function index()
     {
-            $navbars = Navbar::all();
-            $tags = Tag::all()->random(9)->shuffle();
-            $categories = Categorie::all()->take(6)->shuffle();
-            $instas = BlogInsta::all();
-            $footers = Footer::all();
-            $blogposts = BlogPost::paginate(3);
-            $comments= BlogComment::all();
-            return view('pages.blog', compact('navbars','tags', 'categories', 'instas','footers', 'blogposts', 'comments'));
+        $navbars = Navbar::all();
+        $tags = Tag::all()->random(9)->shuffle();
+        $categories = Categorie::all()->take(6)->shuffle();
+        $instas = BlogInsta::all();
+        $footers = Footer::all();
+        $blogposts = BlogPost::paginate(3);
+        $comments= BlogComment::all();
+        return view('pages.blog', compact('navbars','tags', 'categories', 'instas','footers', 'blogposts', 'comments'));
     }
 }

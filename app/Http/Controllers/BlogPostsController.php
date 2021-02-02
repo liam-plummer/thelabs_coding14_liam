@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BlogPosts;
+use App\Models\BlogPost;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class BlogPostsController extends Controller
+class BlogPostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,16 +36,30 @@ class BlogPostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $blogpost = new BlogPost();
+        $user = Auth::user();
+        $request->validate([
+            "image" => "required",
+            "title" => "required" ,
+            "post"  => "required"
+        ]);
+        $blogpost->image=$request->image;
+        $blogpost->title=$request->title;
+        $blogpost->post=$request->post;
+        $blogpost->role_id = $user->role_id;
+        $blogpost->created_at=now();
+
+        $blogpost->save();
+        return redirect()->route('blog.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\BlogPosts  $blogPosts
+     * @param  \App\Models\BlogPost  $blogPost
      * @return \Illuminate\Http\Response
      */
-    public function show(BlogPosts $blogPosts)
+    public function show(BlogPost $blogPost)
     {
         //
     }
@@ -52,10 +67,10 @@ class BlogPostsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\BlogPosts  $blogPosts
+     * @param  \App\Models\BlogPost  $blogPost
      * @return \Illuminate\Http\Response
      */
-    public function edit(BlogPosts $blogPosts)
+    public function edit(BlogPost $blogPost)
     {
         //
     }
@@ -64,10 +79,10 @@ class BlogPostsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\BlogPosts  $blogPosts
+     * @param  \App\Models\BlogPost  $blogPost
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BlogPosts $blogPosts)
+    public function update(Request $request, BlogPost $blogPost)
     {
         //
     }
@@ -75,10 +90,10 @@ class BlogPostsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\BlogPosts  $blogPosts
+     * @param  \App\Models\BlogPost  $blogPost
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BlogPosts $blogPosts)
+    public function destroy(BlogPost $blogPost)
     {
         //
     }
